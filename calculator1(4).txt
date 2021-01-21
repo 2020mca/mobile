@@ -1,0 +1,157 @@
+calculator1(mainactivity.java):
+package com.example.calculator1;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    EditText num1;
+    EditText num2;
+    Button Add;
+    Button Sub;
+    Button Mul;
+    Button Div;
+    TextView Res;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        num1=(EditText) findViewById(R.id.edit1);
+        num2=(EditText) findViewById(R.id.edit2);
+        Add=(Button)findViewById(R.id.add);
+        Sub=(Button)findViewById(R.id.sub);
+        Mul=(Button)findViewById(R.id.mul);
+        Div=(Button)findViewById(R.id.div);
+        Res=(TextView)findViewById(R.id.Res);
+
+        Add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int number1=Integer.parseInt(num1.getText().toString());
+                int number2=Integer.parseInt(num2.getText().toString());
+                int result=number1+number2;
+                Res.setText(String.valueOf(result));
+            }
+        });
+        Sub.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int number1=Integer.parseInt(num1.getText().toString());
+                int number2=Integer.parseInt(num2.getText().toString());
+                int result=number1-number2;
+                Res.setText(String.valueOf(result));
+            }
+        });
+        Mul.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int number1=Integer.parseInt(num1.getText().toString());
+                int number2=Integer.parseInt(num2.getText().toString());
+                int result=number1*number2;
+                Res.setText(String.valueOf(result));
+            }
+        });
+        Div.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int number1=Integer.parseInt(num1.getText().toString());
+                int number2=Integer.parseInt(num2.getText().toString());
+                int result=number1/number2;
+                Res.setText(String.valueOf(result));
+            }
+        });
+
+    }
+
+}
+.xml:
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="281dp"
+        android:text="Add" />
+
+    <Button
+        android:id="@+id/div"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="false"
+        android:layout_marginLeft="228dp"
+        android:layout_marginTop="412dp"
+        android:text="Div" />
+
+    <Button
+        android:id="@+id/mul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="412dp"
+        android:text="Mul" />
+
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="227dp"
+        android:layout_marginTop="281dp"
+        android:text="Sub" />
+
+    <TextView
+        android:id="@+id/Res"
+        android:layout_width="118dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="132dp"
+        android:layout_marginTop="205dp"
+        android:text="Result=" />
+
+    <EditText
+        android:id="@+id/edit1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="51dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/edit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="121dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+</RelativeLayout>
